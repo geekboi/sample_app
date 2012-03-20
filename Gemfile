@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.2'
 gem 'bootstrap-sass'
+gem 'jquery-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -11,6 +12,15 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+group :development do
+  gem 'guard-rspec'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'guard-spork'
+  gem 'spork'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,11 +34,9 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'jquery-rails'
 
-group :test do
-  gem 'capybara'
-end
+
+
 
 group :production do
   gem 'pg', '0.12.2'
@@ -48,3 +56,12 @@ end
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+# Test gems on Windows
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'rb-fchange'
+  gem 'rb-notifu'
+  gem 'win32console'
+end 
