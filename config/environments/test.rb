@@ -33,5 +33,12 @@ SampleApp::Application.configure do
   config.active_record.mass_assignment_sanitizer = :strict
 
   # Print deprecation notices to the stderr
-  config.active_support.deprecation = :stderr
+  config.active_support.deprecation = :stderr1
+  
+  #speed up tests by lowering bcrypt's cost function
+  require 'bcrypt'
+  silence_warnings do
+    BCrypt::Engine::DEFAULT_COST = BCrypt::Engine::MIN_COST
+  end
+  
 end
