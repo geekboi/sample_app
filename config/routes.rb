@@ -17,8 +17,9 @@ SampleApp::Application.routes.draw do
   #POST   /sessions   sessions_path create      create a new session
   #DELETE /signout    signout_path  destroy     delete a session (sign out)
   #
+
   match '/signin',  to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy', via:  :delete
+  match '/signout', to: 'sessions#destroy', via: :delete
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
